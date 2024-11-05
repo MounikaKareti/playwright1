@@ -7,3 +7,7 @@ test('test2',async({page})=>{
     console.log("test2...")
 
 })
+test('test3',async({page})=>{
+    console.log("test3...")
+
+})
