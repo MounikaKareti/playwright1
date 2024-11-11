@@ -10,15 +10,17 @@ test('POM',async({page})=>{
  
 
     const home=new HomePage(page)
-    await home.productList("Nexus 6")
+    await home.productList("Iphone 6 32gb")
     await page.waitForTimeout(3000)
     await home.gotoCart()
 
     const cart = new CartPage(page)
     await page.waitForTimeout(3000)
-    const status= await cart.addToCartProduct("Nexus 6")
+    const status= await cart.addToCartProduct("Iphone 6 32gb")
      expect(await status).toBe(true)
-
+     await cart.placeOdrer();
+     await expect(page.locator("//button[normalize-space()='OK']")).toBeVisible();
+ 
 
 })
 

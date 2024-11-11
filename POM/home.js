@@ -15,7 +15,7 @@ exports.HomePage=class HomePage{
             break;
         }
        }
-       await this.page.on('dialog',async dialog=>{
+        this.page.on('dialog',async dialog=>{
        if(dialog.message().includes("added")){
          await dialog.accept()
        }
